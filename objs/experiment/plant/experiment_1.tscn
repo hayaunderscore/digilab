@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqk78uqojko7p"]
+
+[ext_resource type="Script" uid="uid://bbg2moh7g15b" path="res://scripts/experiments/plant/world.gd" id="1_pf1gy"]
+[ext_resource type="PackedScene" uid="uid://b5vu1a3i4a0gb" path="res://objs/experiment/plant/pot.tscn" id="2_1fxnt"]
+
+[node name="Experiment1" type="Node2D"]
+script = ExtResource("1_pf1gy")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="StartButton" type="Button" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 104.0
+offset_bottom = 48.0
+text = "Start"
+
+[node name="PauseButton" type="Button" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 56.0
+offset_right = 104.0
+offset_bottom = 88.0
+text = "Pause
+"
+
+[node name="Reset" type="Button" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 104.0
+offset_bottom = 128.0
+text = "Reset
+"
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Pots" type="Node2D" parent="Environment"]
+
+[node name="Pot" parent="Environment/Pots" instance=ExtResource("2_1fxnt")]
+position = Vector2(112, 384)
+
+[node name="Pot2" parent="Environment/Pots" instance=ExtResource("2_1fxnt")]
+position = Vector2(320, 384)
+
+[node name="Pot3" parent="Environment/Pots" instance=ExtResource("2_1fxnt")]
+position = Vector2(528, 384)
+
+[connection signal="pressed" from="HUD/Control/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="HUD/Control/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="HUD/Control/Reset" to="." method="_on_reset_pressed"]

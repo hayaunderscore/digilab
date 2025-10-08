@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5vu1a3i4a0gb"]
+
+[ext_resource type="Script" uid="uid://btc4p7ocvey3k" path="res://scripts/experiments/plant/pot.gd" id="1_kmjmu"]
+[ext_resource type="Texture2D" uid="uid://bfgiknk34e17g" path="res://assets/experiments/plant/pot.png" id="2_a1uww"]
+[ext_resource type="Texture2D" uid="uid://c2dafh3vavc6a" path="res://assets/experiments/plant/sprout_states.png" id="3_u8g1e"]
+
+[node name="Pot" type="Node2D"]
+script = ExtResource("1_kmjmu")
+
+[node name="Pot" type="Sprite2D" parent="."]
+texture = ExtResource("2_a1uww")
+metadata/_edit_lock_ = true
+
+[node name="Sprout" type="Sprite2D" parent="."]
+position = Vector2(0, -96)
+texture = ExtResource("3_u8g1e")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 128)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -64.0
+offset_top = -208.0
+offset_right = 64.0
+offset_bottom = -128.0
+metadata/_edit_group_ = true
+
+[node name="SunlightSlider" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 23.0
+text = "Sunlight"
+
+[node name="HSlider" type="HSlider" parent="Control/SunlightSlider"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 128.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control/SunlightSlider/HSlider"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = -4.0
+offset_right = 171.0
+offset_bottom = 19.0
+text = "50"
+
+[node name="WaterSlider" type="Label" parent="Control"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 64.0
+offset_bottom = 63.0
+text = "Water"
+
+[node name="HSlider" type="HSlider" parent="Control/WaterSlider"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 128.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control/WaterSlider/HSlider"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = -4.0
+offset_right = 171.0
+offset_bottom = 19.0
+text = "50"
+
+[connection signal="value_changed" from="Control/SunlightSlider/HSlider" to="." method="_on_sunlight_value_changed"]
+[connection signal="value_changed" from="Control/WaterSlider/HSlider" to="." method="_on_water_value_changed"]

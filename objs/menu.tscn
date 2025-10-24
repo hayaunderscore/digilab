@@ -1,0 +1,107 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhdintyvyjufh"]
+
+[ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="1_naem5"]
+[ext_resource type="Script" uid="uid://dehdmqv60pksn" path="res://scripts/menu.gd" id="1_sw8bf"]
+[ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="2_sw27b"]
+[ext_resource type="PackedScene" uid="uid://b6ofc6xp5hn57" path="res://objs/experiment.tscn" id="3_22o8r"]
+[ext_resource type="PackedScene" uid="uid://bahnkrklwf445" path="res://objs/experiment/plant/overlay.tscn" id="5_n2aqr"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sw8bf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Padding" type="FlowContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_naem5")
+theme_override_font_sizes/font_size = 50
+text = "Menu"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="Experiment" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+theme = ExtResource("1_naem5")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Experiment"
+script = ExtResource("2_sw27b")
+scene = ExtResource("3_22o8r")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="Notes" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+theme = ExtResource("1_naem5")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Notes"
+script = ExtResource("2_sw27b")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="Projects" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+theme = ExtResource("1_naem5")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Projects"
+script = ExtResource("2_sw27b")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="Options" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+theme = ExtResource("1_naem5")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Options"
+script = ExtResource("2_sw27b")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Help" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+theme = ExtResource("1_naem5")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Help"
+
+[node name="Overlay" parent="." instance=ExtResource("5_n2aqr")]
+layout_mode = 1
+text = PackedStringArray("Frequently asked questions:\nHow accurate is DigiLab?\n\nDigiLab is highly accurate in explaining the science, but it offers low precision in the measurement and outcome. The goal of this app is merely to show the concept of simple experiments. Since our experiments use common household materials and basic measurements they are not designed to be laboratory-graded.\n\nAre the experiments safe to do in real life?\n\nYes, the experiments are safe when all instructions and warnings are followed. However, safety is a partnership that requires adult supervision.")
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer2/Help" to="." method="_on_help_pressed"]

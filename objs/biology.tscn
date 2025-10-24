@@ -1,0 +1,159 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq7m3kxne3bb1"]
+
+[ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="1_lcw8s"]
+[ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="2_t116v"]
+[ext_resource type="PackedScene" uid="uid://dqk78uqojko7p" path="res://objs/experiment/plant/experiment_1.tscn" id="3_t116v"]
+
+[node name="ExperimentMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Padding" type="FlowContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_lcw8s")
+theme_override_font_sizes/font_size = 50
+text = "Biology"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="A" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+theme = ExtResource("1_lcw8s")
+text = "Experiment A"
+script = ExtResource("2_t116v")
+scene = ExtResource("3_t116v")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="E" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+theme = ExtResource("1_lcw8s")
+text = "Experiment E"
+script = ExtResource("2_t116v")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="I" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+theme = ExtResource("1_lcw8s")
+text = "Experiment I"
+script = ExtResource("2_t116v")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="B" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+theme = ExtResource("1_lcw8s")
+text = "Experiment B"
+script = ExtResource("2_t116v")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="F" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+theme = ExtResource("1_lcw8s")
+text = "Experiment F"
+script = ExtResource("2_t116v")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="J" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+theme = ExtResource("1_lcw8s")
+text = "Experiment J"
+script = ExtResource("2_t116v")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="C" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+theme = ExtResource("1_lcw8s")
+text = "Experiment C"
+script = ExtResource("2_t116v")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="G" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+theme = ExtResource("1_lcw8s")
+text = "Experiment G"
+script = ExtResource("2_t116v")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="K" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+theme = ExtResource("1_lcw8s")
+text = "Experiment K"
+script = ExtResource("2_t116v")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="D" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+theme = ExtResource("1_lcw8s")
+text = "Experiment D"
+script = ExtResource("2_t116v")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="H" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+theme = ExtResource("1_lcw8s")
+text = "Experiment H"
+script = ExtResource("2_t116v")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="L" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+theme = ExtResource("1_lcw8s")
+text = "Experiment L"
+script = ExtResource("2_t116v")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(192, 32)
+layout_mode = 2
+theme = ExtResource("1_lcw8s")
+text = "Back"
+script = ExtResource("2_t116v")
+back_button = true
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"

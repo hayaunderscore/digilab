@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://bahnkrklwf445"]
+
+[ext_resource type="Script" uid="uid://bp3vs3o7wtt8e" path="res://scripts/overlay.gd" id="1_go8xb"]
+[ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="2_iuvky"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ju1j"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.8346143, 0.8346143, 0.8346143, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[node name="Overlay" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_go8xb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.33333334)
+
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -64.0
+offset_right = 272.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ju1j")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(512, 0)
+layout_mode = 2
+theme = ExtResource("2_iuvky")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "In this experiment, the user can \"plant\" a digital seed. The user can modify the amount of sunlight and water to experiment how each variable affect the plant growth.  The experiment will be saved in the “Projects”. “ Over a few animated \"days,\" the seed sprouts, a stem emerges, and leaves grow.  The user can check the project time to time. 
+Note your observations. "
+horizontal_alignment = 1
+autowrap_mode = 2

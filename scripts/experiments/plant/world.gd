@@ -19,7 +19,7 @@ func _on_start_button_pressed() -> void:
 	# All pots are contained within a node, for organization.
 	for pot in pots.get_children():
 		# Start each pot
-		pot.start()
+		pot.start($HUD/Control/Speed.value)
 
 func _on_pause_button_pressed() -> void:
 	for pot in pots.get_children():
@@ -28,3 +28,10 @@ func _on_pause_button_pressed() -> void:
 func _on_reset_pressed() -> void:
 	for pot in pots.get_children():
 		pot.reset()
+
+func _on_speed_value_changed(value: float) -> void:
+	$HUD/Control/Speed/Label2.text = "%d sec." % [value]
+
+func _on_info_pressed() -> void:
+	get_viewport().gui_release_focus()
+	$HUD/Overlay.visible = true

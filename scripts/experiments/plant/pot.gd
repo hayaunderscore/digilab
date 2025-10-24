@@ -27,7 +27,7 @@ var true_time: float = 0 # Real time
 var started: bool = false # Whether it has started its cycle or not
 
 const HEALTHY_FRAME: int = 5 # Constant- never changes. The state that a plant is considered 'healthy' and slows down the growth
-const BASE_SPEED: float = 3 # Base speed, in seconds
+var BASE_SPEED: float = 3 # Base speed, in seconds
 
 # Regions and stuff for the visual aspect
 @onready var sprout: Sprite2D = $Sprout
@@ -83,9 +83,10 @@ func _on_water_value_changed(value: float) -> void:
 	water = value
 
 # Starts the sprouting cycle
-func start():
+func start(_speed: float = 3):
 	started = true
 	$Control.visible = false
+	BASE_SPEED = _speed
 
 # Resets the sprout back to its normal, nonexistent form
 func reset():

@@ -1,13 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqk78uqojko7p"]
+[gd_scene load_steps=7 format=3 uid="uid://dqk78uqojko7p"]
 
 [ext_resource type="Script" uid="uid://bbg2moh7g15b" path="res://scripts/experiments/plant/world.gd" id="1_pf1gy"]
 [ext_resource type="PackedScene" uid="uid://b5vu1a3i4a0gb" path="res://objs/experiment/plant/pot.tscn" id="2_1fxnt"]
+[ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="2_amlhr"]
 [ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="2_i3m0g"]
 [ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="3_i3m0g"]
 [ext_resource type="PackedScene" uid="uid://bahnkrklwf445" path="res://objs/experiment/plant/overlay.tscn" id="4_7ju1j"]
 
 [node name="Experiment1" type="Node2D"]
 script = ExtResource("1_pf1gy")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -4096
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_right = 704.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_amlhr")
+expand_mode = 1
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -67,6 +81,7 @@ offset_left = 120.0
 offset_top = 16.0
 offset_right = 248.0
 offset_bottom = 32.0
+theme = ExtResource("3_i3m0g")
 min_value = 3.0
 max_value = 20.0
 step = 0.5
@@ -77,6 +92,7 @@ layout_mode = 0
 offset_top = 16.0
 offset_right = 40.0
 offset_bottom = 39.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Speed"
 
 [node name="Label2" type="Label" parent="HUD/Control/Speed"]
@@ -85,6 +101,7 @@ offset_left = 129.0
 offset_top = -4.0
 offset_right = 169.0
 offset_bottom = 19.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "3 sec."
 
 [node name="Info" type="Button" parent="HUD/Control"]

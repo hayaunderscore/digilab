@@ -23,32 +23,43 @@ var save_schema: Dictionary = {
 	"event_data": {"data_type": "blob"}
 }
 
+# Experiment types
 enum EXPERIMENT_TYPES {
 	BIOLOGY,
 	CHEMISTRY,
 	PHYSICS
 }
 
+# Runs at startup, initializes the database if it doesnt exist
 func _ready() -> void:
 	save_db = SQLite.new()
 	save_db.path = save_db_path
+	# Opens the database.
 	save_db.open_db()
 	# Query whether the tables exist or not
 	# This is an array just in case we add more tables in the future!
 	for table in ["experiments"]:
+		# Check if it exists lmao
 		save_db.query_with_bindings("SELECT name FROM sqlite_master WHERE type='table' AND name=?;", [table])
 		if save_db.query_result.is_empty():
+			# Creates a new table with a schema
+			# A schema is a blueprint for the table, 
+			# listing specific row names and what type of values should they contain
 			save_db.create_table(table, save_schema)
+	# Closes the database.
 	save_db.close_db()
 
+# Recloses the database just in case
 func _exit_tree() -> void:
 	save_db.close_db()
 
+# Sets a new experiment to be active
 func set_experiment_active(name: String, type: EXPERIMENT_TYPES):
 	save_db.open_db()
 	save_db.path = save_db_path
 	# Check if it exists before we insert a row
 	save_db.query_with_bindings("SELECT * FROM experiments WHERE name=?", [name])
+	# Runs if it doesnt exist, so just insert a new row
 	if save_db.query_result.is_empty():
 		save_db.insert_row("experiments", {
 			"type": type,
@@ -56,12 +67,14 @@ func set_experiment_active(name: String, type: EXPERIMENT_TYPES):
 			"active": 1
 		})
 	else:
+		# Update existing data if it already exists
 		save_db.update_rows("experiments", "name = '%s'" % [name], {
 			"type": type,
 			"active": 1
 		})
 	save_db.close_db()
 
+# Sets an experiment to be inactive
 func set_experiment_inactive(name):
 	save_db.open_db()
 	save_db.path = save_db_path
@@ -73,6 +86,7 @@ func set_experiment_inactive(name):
 	})
 	save_db.close_db()
 
+# Returns all active experiments in the database
 func get_active_experiments() -> Array[Dictionary]:
 	save_db.open_db()
 	save_db.path = save_db_path
@@ -82,6 +96,7 @@ func get_active_experiments() -> Array[Dictionary]:
 	save_db.close_db()
 	return ret
 
+# Sets the note of an experiment
 func set_experiment_note(name: String, note: String):
 	save_db.open_db()
 	save_db.path = save_db_path
@@ -116,28 +131,3 @@ func get_experiment_note(name: String):
 	print(ret)
 	save_db.close_db()
 	return ret[0]["notes"]
-
-func start_experiment_saving(path: String, identifier: String, resume: bool = false):
-	save = JSON.new()
-	if FileAccess.file_exists(path):
-		if not resume:
-			DirAccess.remove_absolute(path)
-		else:
-			save.parse(FileAccess.get_file_as_string(path))
-	if not FileAccess.file_exists(path):
-		save.data = {}
-	save.data["identifier"] = identifier
-	save.data["path"] = path
-
-func save_current_experiment(s: JSON = null):
-	if not s: 
-		s = save
-	if s:
-		if not DirAccess.dir_exists_absolute("user://experiments/"):
-			DirAccess.make_dir_recursive_absolute("user://experiments/")
-		var f = FileAccess.open(save.data["path"], FileAccess.WRITE)
-		print(FileAccess.get_open_error())
-		if f:
-			f.store_string(JSON.stringify(save.data))
-			f.close()
-	save = null

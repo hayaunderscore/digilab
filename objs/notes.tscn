@@ -83,10 +83,12 @@ scroll_smooth = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
 
 [node name="Back" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(192, 64)
 layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("2_xggly")
 text = "Back"
 script = ExtResource("4_s6x0h")

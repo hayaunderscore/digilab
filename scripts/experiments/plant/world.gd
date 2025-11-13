@@ -32,6 +32,7 @@ func _on_pause_button_pressed() -> void:
 func _on_reset_pressed() -> void:
 	for pot in pots.get_children():
 		pot.reset()
+		# Technically the experiment still exists, just inactive
 		Save.set_experiment_inactive("Experiment 1")
 
 func _on_speed_value_changed(value: float) -> void:

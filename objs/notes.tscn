@@ -78,6 +78,8 @@ size_flags_horizontal = 3
 [node name="Edit" type="TextEdit" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
+placeholder_text = "Write whatever you want here!"
+scroll_smooth = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -91,4 +93,6 @@ script = ExtResource("4_s6x0h")
 back_button = true
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
-[connection signal="item_selected" from="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="item_clicked" from="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/ItemList" to="." method="_on_item_list_item_clicked"]
+[connection signal="text_changed" from="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Edit" to="." method="_on_edit_text_changed"]
+[connection signal="changed_scene" from="VBoxContainer/VBoxContainer/HBoxContainer2/Back" to="." method="_on_back_changed_scene"]

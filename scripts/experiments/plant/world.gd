@@ -22,7 +22,7 @@ func _on_start_button_pressed() -> void:
 	# All pots are contained within a node, for organization.
 	for pot in pots.get_children():
 		# Start each pot
-		Save.start_experiment_saving(save_path, "Experiment 1", true)
+		Save.set_experiment_active("Experiment 1", Save.EXPERIMENT_TYPES.BIOLOGY)
 		pot.start($HUD/Control/Speed.value)
 
 func _on_pause_button_pressed() -> void:
@@ -32,8 +32,7 @@ func _on_pause_button_pressed() -> void:
 func _on_reset_pressed() -> void:
 	for pot in pots.get_children():
 		pot.reset()
-		if FileAccess.file_exists(save_path):
-			DirAccess.remove_absolute(save_path)
+		Save.set_experiment_inactive("Experiment 1")
 
 func _on_speed_value_changed(value: float) -> void:
 	$HUD/Control/Speed/Label2.text = "%d sec." % [value]

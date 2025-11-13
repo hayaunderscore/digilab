@@ -2,36 +2,33 @@ extends Control
 
 @onready var notes: ItemList = $VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/ItemList
 @onready var note_text: TextEdit = $VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Edit
-var notes_arr: Array[Dictionary]
+var notes_arr: Array[String]
 
 var is_notes: bool = true
+var current_index: int = 0
 
 func _ready() -> void:
 	# Clear all item list items
 	notes.clear()
-	# Iterate through experiments for each item
-	var dir = DirAccess.open("user://experiments/")
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if not dir.current_is_dir():
-				var json = JSON.parse_string(FileAccess.get_file_as_string("user://experiments/" + file_name))
-				if json:
-					notes.add_item(json["identifier"])
-					notes_arr.push_back(json)
-				else:
-					print("Invalid JSON!")
-			file_name = dir.get_next()
-	else:
-		print("No experiments currently running!")
+	var experiments = Save.get_active_experiments()
+	for experiment in experiments:
+		notes.add_item(experiment["name"])
+		notes_arr.push_back(experiment["notes"])
 
-func save_items():
-	for item in notes_arr:
-		var j = JSON.new()
-		j.data = item
-		Save.save_current_experiment(j)
+func _on_edit_text_changed() -> void:
+	notes_arr[current_index] = note_text.text
 
-func _on_item_list_item_selected(index: int) -> void:
-	# Get selected
-	pass
+func _on_item_list_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
+	current_index = index
+	note_text.text = Save.get_experiment_note(notes.get_item_text(index))
+
+func _on_back_changed_scene() -> void:
+	var arr: Array[Dictionary]
+	for i in notes_arr.size():
+		var note = notes_arr[i]
+		var name = notes.get_item_text(i)
+		arr.push_back({
+			"name": name,
+			"note": note
+		})
+	Save.set_experiments_note(arr)

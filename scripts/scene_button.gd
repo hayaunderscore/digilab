@@ -6,24 +6,22 @@ class_name SceneButton
 
 var clicked: bool = false
 
+signal changed_scene
+
 func _pressed() -> void:
 	if clicked: return
 	# Goes to a scene
 	if scene:
 		MenuHelper.back_scenes.push_back(get_tree().current_scene.scene_file_path)
 		get_tree().change_scene_to_packed(scene)
+		changed_scene.emit()
 		MenuHelper.current_scene_nest += 1
 	# Goes to the last/previous scene
 	if back_button and MenuHelper.back_scenes.get(MenuHelper.current_scene_nest - 1) != null:
-		print("go bacc")
 		get_tree().change_scene_to_file(MenuHelper.back_scenes[MenuHelper.current_scene_nest - 1])
 		MenuHelper.back_scenes.pop_back()
 		MenuHelper.current_scene_nest -= 1
-		# Shitty solution but whatever
-		if get_tree().current_scene.get("is_notes"):
-			Save.save = JSON.new()
-			Save.save.data = get_tree().current_scene.notes
-		Save.save_current_experiment()
+		changed_scene.emit()
 	# Wtf! Not set? Explode!
 	if scene == null and not back_button:
 		SoundManager.play_sfx("res://assets/snd/snd_badexplosion.wav")

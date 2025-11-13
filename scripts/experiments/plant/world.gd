@@ -13,12 +13,16 @@ extends Node2D
 # mhgkhjfghnf pots
 @onready var pots: Node2D = $Environment/Pots
 
+# Save path for experiment info
+var save_path = "user://experiments/1.dat"
+
 # This starts the sprouting 
 func _on_start_button_pressed() -> void:
 	# This goes through every pot in the scene.
 	# All pots are contained within a node, for organization.
 	for pot in pots.get_children():
 		# Start each pot
+		Save.start_experiment_saving(save_path, "Experiment 1", true)
 		pot.start($HUD/Control/Speed.value)
 
 func _on_pause_button_pressed() -> void:
@@ -28,6 +32,8 @@ func _on_pause_button_pressed() -> void:
 func _on_reset_pressed() -> void:
 	for pot in pots.get_children():
 		pot.reset()
+		if FileAccess.file_exists(save_path):
+			DirAccess.remove_absolute(save_path)
 
 func _on_speed_value_changed(value: float) -> void:
 	$HUD/Control/Speed/Label2.text = "%d sec." % [value]

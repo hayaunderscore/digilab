@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhdintyvyjufh"]
+[gd_scene load_steps=8 format=3 uid="uid://bhdintyvyjufh"]
 
 [ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="1_naem5"]
 [ext_resource type="Script" uid="uid://dehdmqv60pksn" path="res://scripts/menu.gd" id="1_sw8bf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="2_sw27b"]
 [ext_resource type="PackedScene" uid="uid://b6ofc6xp5hn57" path="res://objs/experiment.tscn" id="3_22o8r"]
 [ext_resource type="PackedScene" uid="uid://bahnkrklwf445" path="res://objs/experiment/plant/overlay.tscn" id="5_n2aqr"]
+[ext_resource type="PackedScene" uid="uid://b603832vfsa4b" path="res://objs/notes.tscn" id="6_f8ooo"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -74,6 +75,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Experiment"
 script = ExtResource("2_sw27b")
 scene = ExtResource("3_22o8r")
+back_button = null
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
 [node name="Notes" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
@@ -83,6 +85,8 @@ theme = ExtResource("1_naem5")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Notes"
 script = ExtResource("2_sw27b")
+scene = ExtResource("6_f8ooo")
+back_button = null
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
 [node name="Projects" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
@@ -92,6 +96,7 @@ theme = ExtResource("1_naem5")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Projects"
 script = ExtResource("2_sw27b")
+back_button = null
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
 [node name="Options" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
@@ -101,6 +106,7 @@ theme = ExtResource("1_naem5")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Options"
 script = ExtResource("2_sw27b")
+back_button = null
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]

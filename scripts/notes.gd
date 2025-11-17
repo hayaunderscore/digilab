@@ -15,7 +15,10 @@ func _ready() -> void:
 	for experiment in experiments:
 		# Loop through them and add them to the items list
 		notes.add_item(experiment["name"])
-		notes_arr.push_back(experiment["notes"])
+		if experiment["notes"]:
+			notes_arr.push_back(experiment["notes"])
+		else:
+			notes_arr.push_back("")
 	if experiments.is_empty():
 		# No experiments are found active for the time being...
 		note_text.editable = false

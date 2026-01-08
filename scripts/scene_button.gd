@@ -32,3 +32,7 @@ func _pressed() -> void:
 func _on_infooo_pressed() -> void:
 	get_viewport().gui_release_focus()
 	$HUD/Overlaaay.visible = true
+
+
+func _on_back_pressed() -> void:
+	pass # Replace with function body.

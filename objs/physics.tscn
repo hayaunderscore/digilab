@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b33tda4gaoadg"]
 
 [ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="1_htxsa"]
-[ext_resource type="Script" uid="uid://benouvicjpft5" path="res://physics.gd" id="1_s67c5"]
+[ext_resource type="Script" uid="uid://bee55c8irggam" path="res://objs/physics.gd" id="1_s67c5"]
 [ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="2_prsrd"]
 [ext_resource type="FontFile" uid="uid://cxnmor6y1or8j" path="res://assets/font/OtomanopeeOne-Regular.ttf" id="3_xf4yl"]
 [ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="4_vjvg7"]
@@ -36,7 +36,7 @@ offset_right = 98.0
 offset_bottom = 91.0
 grow_horizontal = 2
 theme = ExtResource("2_prsrd")
-theme_override_colors/font_color = Color(0.008202022, 0.008202025, 0.008202025, 1)
+theme_override_colors/font_color = Color(0.49019608, 0.21960784, 0.2509804, 1)
 theme_override_fonts/font = ExtResource("3_xf4yl")
 theme_override_font_sizes/font_size = 50
 text = "Physics"
@@ -46,7 +46,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="SceneButton" type="Button" parent="button"]
+[node name="exp1" type="Button" parent="button"]
 layout_mode = 0
 offset_left = 340.0
 offset_top = 147.0
@@ -58,7 +58,7 @@ text = "Experiment I"
 script = ExtResource("4_vjvg7")
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
-[node name="SceneButton2" type="Button" parent="button"]
+[node name="exp2" type="Button" parent="button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.5
@@ -76,7 +76,7 @@ text = "Experiment II"
 script = ExtResource("4_vjvg7")
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
-[node name="SceneButton3" type="Button" parent="button"]
+[node name="back" type="Button" parent="button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.5
@@ -94,4 +94,7 @@ text = "Back"
 script = ExtResource("4_vjvg7")
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
-[connection signal="pressed" from="button/SceneButton3" to="." method="_on_scene_button_3_pressed"]
+[connection signal="pressed" from="button/exp1" to="." method="_on_exp_1_pressed"]
+[connection signal="pressed" from="button/back" to="." method="_on_scene_button_3_pressed"]
+[connection signal="pressed" from="button/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="button/back" to="button/exp1" method="_on_back_pressed"]

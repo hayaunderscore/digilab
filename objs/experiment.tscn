@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6ofc6xp5hn57"]
+[gd_scene load_steps=8 format=3 uid="uid://b6ofc6xp5hn57"]
 
 [ext_resource type="Script" uid="uid://c12xp7bjwqvef" path="res://scripts/experiment.gd" id="1_3c2hs"]
 [ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="1_bxuk2"]
 [ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="1_tn2ec"]
 [ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="2_yte7q"]
 [ext_resource type="PackedScene" uid="uid://cq7m3kxne3bb1" path="res://objs/biology.tscn" id="3_xhof4"]
+[ext_resource type="PackedScene" uid="uid://csvytnme5xrqr" path="res://objs/chemistrii.tscn" id="6_284me"]
+[ext_resource type="PackedScene" uid="uid://b33tda4gaoadg" path="res://objs/physics.tscn" id="7_koyd2"]
 
 [node name="ExperimentMenu" type="Control"]
 layout_mode = 3
@@ -68,6 +70,7 @@ layout_mode = 2
 theme = ExtResource("1_bxuk2")
 text = "Chemistry"
 script = ExtResource("2_yte7q")
+scene = ExtResource("6_284me")
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
 [node name="Physics" type="Button" parent="VBoxContainer/VBoxContainer"]
@@ -76,6 +79,7 @@ layout_mode = 2
 theme = ExtResource("1_bxuk2")
 text = "Physics"
 script = ExtResource("2_yte7q")
+scene = ExtResource("7_koyd2")
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
 [node name="Back" type="Button" parent="VBoxContainer/VBoxContainer"]
@@ -86,6 +90,3 @@ text = "Back"
 script = ExtResource("2_yte7q")
 back_button = true
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
-
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/Chemistry" to="." method="_on_chemistry_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/Physics" to="." method="_on_physics_pressed"]

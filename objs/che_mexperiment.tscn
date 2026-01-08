@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkijqrspw7fhr"]
+[gd_scene load_steps=10 format=3 uid="uid://bkijqrspw7fhr"]
 
 [ext_resource type="Script" uid="uid://b8guw0rvihuml" path="res://objs/che_mexperiment.gd" id="1_opicp"]
 [ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="1_xp6ch"]
 [ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="2_opicp"]
 [ext_resource type="FontFile" uid="uid://cxnmor6y1or8j" path="res://assets/font/OtomanopeeOne-Regular.ttf" id="3_o78fj"]
 [ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="4_52qx4"]
+[ext_resource type="PackedScene" uid="uid://dyjo66d6866si" path="res://objs/eggsperiment.tscn" id="6_opicp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp6ch"]
 bg_color = Color(1, 1, 1, 1)
@@ -59,6 +60,7 @@ theme = ExtResource("2_opicp")
 theme_override_fonts/font = ExtResource("3_o78fj")
 text = "Start"
 script = ExtResource("4_52qx4")
+scene = ExtResource("6_opicp")
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
 [node name="back" type="Button" parent="Control/Control"]
@@ -71,6 +73,7 @@ theme = ExtResource("2_opicp")
 theme_override_fonts/font = ExtResource("3_o78fj")
 text = "Back"
 script = ExtResource("4_52qx4")
+back_button = true
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -140,6 +143,3 @@ theme_override_fonts/font = ExtResource("3_o78fj")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxEmpty_xp6ch")
 text = "Instruction"
-
-[connection signal="pressed" from="Control/Control/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Control/Control/back" to="." method="_on_back_pressed"]

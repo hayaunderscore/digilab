@@ -56,6 +56,7 @@ theme = ExtResource("3_0kl8x")
 theme_override_fonts/font = ExtResource("4_s7y4h")
 text = "Back"
 script = ExtResource("5_ueou6")
+back_button = true
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
 [node name="Node2D" type="Control" parent="."]
@@ -166,5 +167,3 @@ visible = false
 position = Vector2(487, 304.50003)
 scale = Vector2(0.7477478, 0.84)
 texture = ExtResource("12_keqlt")
-
-[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

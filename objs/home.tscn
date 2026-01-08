@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dulgtrahtio0c"]
+[gd_scene load_steps=7 format=3 uid="uid://dulgtrahtio0c"]
 
 [ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="1_jocxb"]
 [ext_resource type="Texture2D" uid="uid://bigdfcxabhppi" path="res://assets/bg/logaurch-removebg-preview.png" id="2_dc6ch"]
 [ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="3_mqx73"]
 [ext_resource type="FontFile" uid="uid://cxnmor6y1or8j" path="res://assets/font/OtomanopeeOne-Regular.ttf" id="4_sdepk"]
-[ext_resource type="Script" uid="uid://bnojqotid7xi2" path="res://scene_button.gd" id="5_je1oh"]
+[ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="5_dc6ch"]
+[ext_resource type="PackedScene" uid="uid://bhdintyvyjufh" path="res://objs/menu.tscn" id="6_mqx73"]
 
 [node name="Home" type="Control"]
 layout_mode = 3
@@ -53,7 +54,6 @@ grow_vertical = 0
 theme = ExtResource("3_mqx73")
 theme_override_fonts/font = ExtResource("4_sdepk")
 text = "Start"
-script = ExtResource("5_je1oh")
+script = ExtResource("5_dc6ch")
+scene = ExtResource("6_mqx73")
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
-
-[connection signal="pressed" from="Control/SceneButton" to="Control/SceneButton" method="_on_pressed"]

@@ -35,4 +35,8 @@ func _on_infooo_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://objs/phy_exp_1.tscn")
+	get_tree().change_scene_to_file("res://physics.tscn")
+
+
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file("res://exp_2_physics.tscn")

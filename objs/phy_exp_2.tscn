@@ -97,4 +97,5 @@ Observe the results and note your findings.
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="Start" to="Start" method="_on_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

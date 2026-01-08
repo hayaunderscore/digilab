@@ -1,0 +1,95 @@
+[gd_scene load_steps=12 format=3 uid="uid://pq5i1mdouhct"]
+
+[ext_resource type="Script" uid="uid://byeounb15qxr3" path="res://exp_2_physics.gd" id="1_qo534"]
+[ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="2_fq7mu"]
+[ext_resource type="Texture2D" uid="uid://n1t40u85jlt3" path="res://balloon/GROUP_1_DIGILAB__11_-removebg-preview.png" id="3_qgg7s"]
+[ext_resource type="Texture2D" uid="uid://hf8rt7wkno34" path="res://balloon/GROUP_1_DIGILAB__10_-removebg-preview.png" id="4_eun6y"]
+[ext_resource type="Script" uid="uid://vrm0wlb8oe63" path="res://shaun.gd" id="4_jlt26"]
+[ext_resource type="Texture2D" uid="uid://x0arjcv57tfm" path="res://balloon/c1f36b2a-92ec-4ef2-8ec7-a3bfed2ca2dc-removebg-preview.png" id="5_jlt26"]
+[ext_resource type="Script" uid="uid://sbmxahu6xxuo" path="res://balloon.gd" id="6_02306"]
+[ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="6_maoat"]
+[ext_resource type="FontFile" uid="uid://cxnmor6y1or8j" path="res://assets/font/OtomanopeeOne-Regular.ttf" id="7_02306"]
+[ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="8_0bplt"]
+[ext_resource type="Script" uid="uid://ceak2xqjjnlvy" path="res://paper.gd" id="8_m1is1"]
+
+[node name="exp_2_physics" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qo534")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fq7mu")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="shaun" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 329.0
+offset_top = 207.0
+offset_right = 519.0
+offset_bottom = 393.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_qgg7s")
+expand_mode = 1
+stretch_mode = 3
+script = ExtResource("4_jlt26")
+
+[node name="balloon" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 597.0
+offset_top = 81.0
+offset_right = 797.0
+offset_bottom = 456.0
+texture = ExtResource("4_eun6y")
+expand_mode = 1
+stretch_mode = 3
+script = ExtResource("6_02306")
+
+[node name="paper" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 169.0
+offset_right = 227.0
+offset_bottom = 334.0
+texture = ExtResource("5_jlt26")
+expand_mode = 1
+stretch_mode = 3
+script = ExtResource("8_m1is1")
+
+[node name="back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.58000004
+anchor_bottom = 0.065000005
+offset_left = 707.0
+offset_top = 14.0
+offset_right = 347.25995
+offset_bottom = 31.799997
+theme = ExtResource("6_maoat")
+theme_override_fonts/font = ExtResource("7_02306")
+text = "Back
+"
+script = ExtResource("8_0bplt")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

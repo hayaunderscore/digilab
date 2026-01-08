@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://cf5g8h6mhp6iu"]
 
 [ext_resource type="FontFile" uid="uid://cxnmor6y1or8j" path="res://assets/font/OtomanopeeOne-Regular.ttf" id="1_jm5bn"]
-[ext_resource type="Texture2D" uid="uid://1kpv8xcfyx2g" path="res://assets/box/default.png" id="1_m762r"]
+[ext_resource type="Texture2D" uid="uid://1kpv8xcfyx2g" path="res://eggspe/default.png" id="1_m762r"]
 [ext_resource type="Texture2D" uid="uid://cg7qckoiinhne" path="res://assets/box/pressed.png" id="2_v6exi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v6exi"]

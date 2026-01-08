@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://ba3yfumd7rm8g"]
+
+[ext_resource type="Script" uid="uid://gvnmyjfmu4eh" path="res://exp_1_physics.gd" id="1_lvtlq"]
+[ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="1_ubixg"]
+[ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="2_lvtlq"]
+[ext_resource type="FontFile" uid="uid://cxnmor6y1or8j" path="res://assets/font/OtomanopeeOne-Regular.ttf" id="3_utek5"]
+[ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="4_nye2d"]
+
+[node name="Exp1physics" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lvtlq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ubixg")
+expand_mode = 1
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 733.0
+offset_top = 11.0
+offset_right = 837.0
+offset_bottom = 60.0
+theme = ExtResource("2_lvtlq")
+theme_override_fonts/font = ExtResource("3_utek5")
+text = "Back"
+script = ExtResource("4_nye2d")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -20,7 +20,6 @@ expand_margin_right = 8.0
 expand_margin_bottom = 8.0
 
 [node name="Overlay" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,11 +57,11 @@ layout_mode = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="ColorRect/PanelContainer/HBoxContainer"]
+clip_contents = true
 custom_minimum_size = Vector2(512, 0)
 layout_mode = 2
 theme = ExtResource("2_iuvky")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "In this experiment, the user can \"plant\" a digital seed. The user can modify the amount of sunlight and water to experiment how each variable affect the plant growth.  The experiment will be saved in the “Projects”. “ Over a few animated \"days,\" the seed sprouts, a stem emerges, and leaves grow.  The user can check the project time to time. 
-Note your observations. "
+text = "In this experiment, the user can compare how eggs behave in plain water versus saltwater. Drag the water bottle icon and pour the same amount of water into both glasses. Next, drag the digital spoon of “iodized salt” into the second glass and mix it. Leave the first glass as plain water. After preparing both glasses, place one egg into the plain water and the other egg into the saltwater. Observe how each egg behaves differently. Watch the results and note your observations."
 horizontal_alignment = 1
 autowrap_mode = 2

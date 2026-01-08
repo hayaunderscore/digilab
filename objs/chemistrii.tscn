@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://csvytnme5xrqr"]
+
+[ext_resource type="Script" uid="uid://cqn5depthyrre" path="res://scripts/chemistrii.gd" id="1_j0vwa"]
+[ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="1_nngck"]
+[ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="2_jeknr"]
+[ext_resource type="FontFile" uid="uid://cxnmor6y1or8j" path="res://assets/font/OtomanopeeOne-Regular.ttf" id="3_5dlbi"]
+[ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="4_x6kwd"]
+
+[node name="chemistrii" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j0vwa")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nngck")
+expand_mode = 1
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Node2D"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 294.0
+offset_top = 44.0
+offset_right = 560.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_jeknr")
+theme_override_colors/font_color = Color(0.49019608, 0.21960784, 0.2509804, 1)
+theme_override_fonts/font = ExtResource("3_5dlbi")
+theme_override_font_sizes/font_size = 60
+text = "Chemistry"
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="exp1" type="Button" parent="Node2D2"]
+offset_left = 327.0
+offset_top = 148.0
+offset_right = 531.0
+offset_bottom = 208.0
+theme = ExtResource("2_jeknr")
+theme_override_fonts/font = ExtResource("3_5dlbi")
+text = "Experiment 1"
+script = ExtResource("4_x6kwd")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="exp2" type="Button" parent="Node2D2"]
+offset_left = 328.0
+offset_top = 233.0
+offset_right = 531.0
+offset_bottom = 295.0
+theme = ExtResource("2_jeknr")
+theme_override_fonts/font = ExtResource("3_5dlbi")
+text = "Experiment 2"
+script = ExtResource("4_x6kwd")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="Node2D3" type="Node2D" parent="."]
+
+[node name="back" type="Button" parent="Node2D3"]
+offset_left = 328.0
+offset_top = 314.0
+offset_right = 529.0
+offset_bottom = 368.0
+theme = ExtResource("2_jeknr")
+theme_override_fonts/font = ExtResource("3_5dlbi")
+text = "Back"
+script = ExtResource("4_x6kwd")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[connection signal="pressed" from="Node2D2/exp1" to="." method="_on_exp_1_pressed"]
+[connection signal="pressed" from="Node2D3/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Node2D3/back" to="TextureRect" method="_on_scene_button_pressed"]

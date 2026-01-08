@@ -18,154 +18,77 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -64.0
-offset_right = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_jamiu")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 16
+[node name="VBoxContainer" type="Node2D" parent="."]
 
 [node name="Padding" type="FlowContainer" parent="VBoxContainer"]
-layout_mode = 2
+offset_right = 853.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 2.0
+offset_top = 43.0
+offset_right = 855.0
+offset_bottom = 93.0
+grow_horizontal = 2
 theme = ExtResource("1_lcw8s")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(0.49019608, 0.21960784, 0.2509804, 1)
+theme_override_font_sizes/font_size = 60
 text = "Biology"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
-theme_override_constants/separation = 8
-alignment = 1
+[node name="VBoxContainer" type="Node2D" parent="VBoxContainer"]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
-layout_mode = 2
+[node name="HBoxContainer" type="Node2D" parent="VBoxContainer/VBoxContainer"]
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/h_separation = 24
-theme_override_constants/v_separation = 8
-columns = 3
+[node name="GridContainer" type="Node2D" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
 
 [node name="A" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(160, 32)
-layout_mode = 2
+offset_left = 333.0
+offset_top = 146.0
+offset_right = 524.0
+offset_bottom = 205.0
 theme = ExtResource("1_lcw8s")
 text = "Experiment A"
 script = ExtResource("2_t116v")
 scene = ExtResource("3_t116v")
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
-[node name="E" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(160, 32)
-layout_mode = 2
-theme = ExtResource("1_lcw8s")
-text = "Experiment E"
-script = ExtResource("2_t116v")
-metadata/_custom_type_script = "uid://dkk6iu66ynto0"
-
-[node name="I" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(160, 32)
-layout_mode = 2
-theme = ExtResource("1_lcw8s")
-text = "Experiment I"
-script = ExtResource("2_t116v")
-metadata/_custom_type_script = "uid://dkk6iu66ynto0"
-
 [node name="B" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(160, 32)
-layout_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 331.0
+offset_top = 229.0
+offset_right = 525.0
+offset_bottom = 293.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_lcw8s")
-text = "Experiment B"
+text = "Experiment B
+"
 script = ExtResource("2_t116v")
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
-[node name="F" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(160, 32)
-layout_mode = 2
-theme = ExtResource("1_lcw8s")
-text = "Experiment F"
-script = ExtResource("2_t116v")
-metadata/_custom_type_script = "uid://dkk6iu66ynto0"
-
-[node name="J" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(160, 32)
-layout_mode = 2
-theme = ExtResource("1_lcw8s")
-text = "Experiment J"
-script = ExtResource("2_t116v")
-metadata/_custom_type_script = "uid://dkk6iu66ynto0"
-
-[node name="C" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(160, 32)
-layout_mode = 2
-theme = ExtResource("1_lcw8s")
-text = "Experiment C"
-script = ExtResource("2_t116v")
-metadata/_custom_type_script = "uid://dkk6iu66ynto0"
-
-[node name="G" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(160, 32)
-layout_mode = 2
-theme = ExtResource("1_lcw8s")
-text = "Experiment G"
-script = ExtResource("2_t116v")
-metadata/_custom_type_script = "uid://dkk6iu66ynto0"
-
-[node name="K" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(160, 32)
-layout_mode = 2
-theme = ExtResource("1_lcw8s")
-text = "Experiment K"
-script = ExtResource("2_t116v")
-metadata/_custom_type_script = "uid://dkk6iu66ynto0"
-
-[node name="D" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(160, 32)
-layout_mode = 2
-theme = ExtResource("1_lcw8s")
-text = "Experiment D"
-script = ExtResource("2_t116v")
-metadata/_custom_type_script = "uid://dkk6iu66ynto0"
-
-[node name="H" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(160, 32)
-layout_mode = 2
-theme = ExtResource("1_lcw8s")
-text = "Experiment H"
-script = ExtResource("2_t116v")
-metadata/_custom_type_script = "uid://dkk6iu66ynto0"
-
-[node name="L" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(160, 32)
-layout_mode = 2
-theme = ExtResource("1_lcw8s")
-text = "Experiment L"
-script = ExtResource("2_t116v")
-metadata/_custom_type_script = "uid://dkk6iu66ynto0"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
-layout_mode = 2
-alignment = 1
+[node name="HBoxContainer2" type="Node2D" parent="VBoxContainer/VBoxContainer"]
 
 [node name="Button" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(192, 32)
-layout_mode = 2
+offset_left = 330.0
+offset_top = 312.0
+offset_right = 522.0
+offset_bottom = 373.0
 theme = ExtResource("1_lcw8s")
 text = "Back"
 script = ExtResource("2_t116v")

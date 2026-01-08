@@ -1,0 +1,145 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkijqrspw7fhr"]
+
+[ext_resource type="Script" uid="uid://b8guw0rvihuml" path="res://objs/che_mexperiment.gd" id="1_opicp"]
+[ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="1_xp6ch"]
+[ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="2_opicp"]
+[ext_resource type="FontFile" uid="uid://cxnmor6y1or8j" path="res://assets/font/OtomanopeeOne-Regular.ttf" id="3_o78fj"]
+[ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="4_52qx4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp6ch"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opicp"]
+bg_color = Color(0.9852814, 0.9852814, 0.9852814, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xp6ch"]
+
+[node name="CHEMexperiment" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_opicp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xp6ch")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="Control" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="start" type="Button" parent="Control/Control"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 122.0
+offset_bottom = 60.0
+theme = ExtResource("2_opicp")
+theme_override_fonts/font = ExtResource("3_o78fj")
+text = "Start"
+script = ExtResource("4_52qx4")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="back" type="Button" parent="Control/Control"]
+layout_mode = 0
+offset_left = 731.0
+offset_top = 11.0
+offset_right = 841.0
+offset_bottom = 60.0
+theme = ExtResource("2_opicp")
+theme_override_fonts/font = ExtResource("3_o78fj")
+text = "Back"
+script = ExtResource("4_52qx4")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="glass" type="Sprite2D" parent="Node2D"]
+
+[node name="egg" type="Sprite2D" parent="Node2D"]
+
+[node name="water" type="Sprite2D" parent="Node2D"]
+
+[node name="Instruction2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -383.5
+offset_top = -19.0
+offset_right = 403.5
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.016551724, 0.016551726, 0.016551724, 1)
+theme_override_fonts/font = ExtResource("3_o78fj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xp6ch")
+theme_override_styles/focus = SubResource("StyleBoxFlat_opicp")
+text = "In this experiment, the user can compare how eggs behave in plain water 
+versus saltwater.  Drag the water bottle icon and pour the same amount of
+water into both glasses.  Next, drag the digital spoon of “iodized salt” into the second 
+glass and mix it.  Leave the first glass as plain water.  After preparing both glasses, 
+place one egg into the plain water and the other egg into the saltwater. 
+Observe how each egg behaves differently. 
+Watch the results and note your observations."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Experiment1" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -168.0
+offset_top = 46.0
+offset_right = 168.0
+offset_bottom = 96.0
+grow_horizontal = 2
+theme = ExtResource("2_opicp")
+theme_override_colors/font_color = Color(0.49019608, 0.21960784, 0.2509804, 1)
+theme_override_fonts/font = ExtResource("3_o78fj")
+theme_override_font_sizes/font_size = 60
+text = "Experiment 1"
+
+[node name="Instruc" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.0
+offset_top = 165.0
+offset_right = 89.0
+offset_bottom = 226.0
+grow_horizontal = 2
+theme = ExtResource("2_opicp")
+theme_override_colors/font_color = Color(0.49019608, 0.21960784, 0.2509804, 1)
+theme_override_fonts/font = ExtResource("3_o78fj")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xp6ch")
+text = "Instruction"
+
+[connection signal="pressed" from="Control/Control/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/Control/back" to="." method="_on_back_pressed"]

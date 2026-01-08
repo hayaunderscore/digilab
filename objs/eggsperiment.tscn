@@ -1,0 +1,170 @@
+[gd_scene load_steps=18 format=3 uid="uid://dyjo66d6866si"]
+
+[ext_resource type="Script" uid="uid://ofe00ec1lv65" path="res://objs/eggsperiment.gd" id="1_6ouqo"]
+[ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="2_keqlt"]
+[ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="3_0kl8x"]
+[ext_resource type="FontFile" uid="uid://cxnmor6y1or8j" path="res://assets/font/OtomanopeeOne-Regular.ttf" id="4_s7y4h"]
+[ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="5_ueou6"]
+[ext_resource type="Texture2D" uid="uid://dfca3qnsvmutn" path="res://eggspe/table.png" id="6_gaovp"]
+[ext_resource type="Texture2D" uid="uid://b3gxmqrqm0wjm" path="res://eggspe/water.png" id="7_f3cqk"]
+[ext_resource type="Script" uid="uid://ugi8llpfusoh" path="res://objs/water_bottle.gd" id="8_0kl8x"]
+[ext_resource type="Texture2D" uid="uid://dj3t5r0lej1ti" path="res://eggspe/spoon.png" id="8_q013n"]
+[ext_resource type="Texture2D" uid="uid://cgu8v0kgulcta" path="res://eggspe/salt.png" id="9_8ol6s"]
+[ext_resource type="Texture2D" uid="uid://byxnwwt0s1p05" path="res://eggspe/glass.png" id="10_o426n"]
+[ext_resource type="Script" uid="uid://cy37j7afbbp7r" path="res://objs/salt_spoon.gd" id="10_yv6co"]
+[ext_resource type="Texture2D" uid="uid://c1uovoopi06s6" path="res://eggspe/egg.png" id="11_fitf5"]
+[ext_resource type="Texture2D" uid="uid://0ds45piybdd6" path="res://eggspe/waterfilled.png" id="12_keqlt"]
+[ext_resource type="Script" uid="uid://cdsdmxuftvq4n" path="res://objs/salt.gd" id="12_r87he"]
+[ext_resource type="Script" uid="uid://btyooyxf5menk" path="res://objs/egg_1.gd" id="15_f1ayg"]
+[ext_resource type="Script" uid="uid://yic2cyml6k6s" path="res://objs/egg_2.gd" id="16_7q1of"]
+
+[node name="eggsperiment" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6ouqo")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_keqlt")
+expand_mode = 1
+
+[node name="table" type="Sprite2D" parent="."]
+position = Vector2(427, 295)
+scale = Vector2(1.2822822, 1)
+texture = ExtResource("6_gaovp")
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 298.5
+offset_top = 14.0
+offset_right = 413.0
+offset_bottom = 67.0
+grow_horizontal = 2
+theme = ExtResource("3_0kl8x")
+theme_override_fonts/font = ExtResource("4_s7y4h")
+text = "Back"
+script = ExtResource("5_ueou6")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="Node2D" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="WaterBottle" type="TextureRect" parent="Node2D"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.0
+offset_top = 151.00002
+offset_right = 218.92609
+offset_bottom = 526.0
+grow_horizontal = 2
+scale = Vector2(0.710961, 0.84933335)
+texture = ExtResource("7_f3cqk")
+expand_mode = 1
+stretch_mode = 3
+script = ExtResource("8_0kl8x")
+
+[node name="SaltSpoon" type="TextureRect" parent="Node2D"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 174.0
+offset_right = 416.09918
+offset_bottom = 549.0
+scale = Vector2(0.7150901, 0.7136667)
+texture = ExtResource("8_q013n")
+expand_mode = 1
+stretch_mode = 3
+script = ExtResource("10_yv6co")
+
+[node name="salt" type="TextureRect" parent="Node2D"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 84.99995
+offset_top = 124.999985
+offset_right = 236.99994
+offset_bottom = 568.51166
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.50000006, 0.40600002)
+pivot_offset = Vector2(970.0001, 220.42807)
+texture = ExtResource("9_8ol6s")
+expand_mode = 1
+stretch_mode = 3
+script = ExtResource("12_r87he")
+
+[node name="Glass" type="TextureRect" parent="Node2D"]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 177.00002
+offset_right = 589.9664
+offset_bottom = 665.73627
+scale = Vector2(0.6246246, 0.6066667)
+texture = ExtResource("10_o426n")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Glass2" type="TextureRect" parent="Node2D"]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 98.00001
+offset_right = 631.1106
+offset_bottom = 850.47253
+scale = Vector2(0.6246246, 0.6066667)
+texture = ExtResource("10_o426n")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="egg1" type="TextureRect" parent="Node2D"]
+layout_mode = 0
+offset_left = 661.00006
+offset_top = 272.0
+offset_right = 847.6087
+offset_bottom = 647.0
+scale = Vector2(0.4662163, 0.44666666)
+texture = ExtResource("11_fitf5")
+expand_mode = 1
+stretch_mode = 3
+script = ExtResource("15_f1ayg")
+
+[node name="egg2" type="TextureRect" parent="Node2D"]
+layout_mode = 0
+offset_left = 714.00006
+offset_top = 249.00002
+offset_right = 947.7972
+offset_bottom = 624.0
+scale = Vector2(0.4662163, 0.44666666)
+texture = ExtResource("11_fitf5")
+expand_mode = 1
+stretch_mode = 3
+script = ExtResource("16_7q1of")
+
+[node name="waterfilled" type="Sprite2D" parent="Node2D"]
+visible = false
+position = Vector2(364, 307.5)
+scale = Vector2(0.7102102, 0.84533334)
+texture = ExtResource("12_keqlt")
+
+[node name="waterwithsalt" type="Sprite2D" parent="Node2D"]
+visible = false
+position = Vector2(487, 304.50003)
+scale = Vector2(0.7477478, 0.84)
+texture = ExtResource("12_keqlt")
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

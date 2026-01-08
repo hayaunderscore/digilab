@@ -27,3 +27,8 @@ func _pressed() -> void:
 		SoundManager.play_sfx("res://assets/snd/snd_badexplosion.wav")
 		modulate.a = 0
 	clicked = true
+
+
+func _on_infooo_pressed() -> void:
+	get_viewport().gui_release_focus()
+	$HUD/Overlaaay.visible = true

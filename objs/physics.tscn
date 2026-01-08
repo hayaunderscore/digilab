@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://b33tda4gaoadg"]
+
+[ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="1_htxsa"]
+[ext_resource type="Script" uid="uid://benouvicjpft5" path="res://physics.gd" id="1_s67c5"]
+[ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="2_prsrd"]
+[ext_resource type="FontFile" uid="uid://cxnmor6y1or8j" path="res://assets/font/OtomanopeeOne-Regular.ttf" id="3_xf4yl"]
+[ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="4_vjvg7"]
+
+[node name="Physics" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s67c5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_htxsa")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -98.0
+offset_top = 41.0
+offset_right = 98.0
+offset_bottom = 91.0
+grow_horizontal = 2
+theme = ExtResource("2_prsrd")
+theme_override_colors/font_color = Color(0.008202022, 0.008202025, 0.008202025, 1)
+theme_override_fonts/font = ExtResource("3_xf4yl")
+theme_override_font_sizes/font_size = 50
+text = "Physics"
+
+[node name="button" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SceneButton" type="Button" parent="button"]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 147.0
+offset_right = 515.0
+offset_bottom = 207.0
+theme = ExtResource("2_prsrd")
+theme_override_fonts/font = ExtResource("3_xf4yl")
+text = "Experiment I"
+script = ExtResource("4_vjvg7")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="SceneButton2" type="Button" parent="button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 21.315
+anchor_bottom = 11.926001
+offset_left = 339.0
+offset_top = 209.0
+offset_right = -338.60004
+offset_bottom = -188.04004
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_prsrd")
+theme_override_fonts/font = ExtResource("3_xf4yl")
+text = "Experiment II"
+script = ExtResource("4_vjvg7")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="SceneButton3" type="Button" parent="button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 21.315
+anchor_bottom = 11.926001
+offset_left = 340.0
+offset_top = 292.0
+offset_right = -337.60004
+offset_bottom = -108.04004
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_prsrd")
+theme_override_fonts/font = ExtResource("3_xf4yl")
+text = "Back"
+script = ExtResource("4_vjvg7")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[connection signal="pressed" from="button/SceneButton3" to="." method="_on_scene_button_3_pressed"]

@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
-		visible = false
+		visible = true
 	if Input.is_action_just_pressed("ui_right"):
 		current_index = wrapi(current_index + 1, 0, text.size())
 	if Input.is_action_just_pressed("ui_left"):

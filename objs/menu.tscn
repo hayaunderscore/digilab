@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="2_n2aqr"]
 [ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="2_sw27b"]
 [ext_resource type="PackedScene" uid="uid://b6ofc6xp5hn57" path="res://objs/experiment.tscn" id="3_22o8r"]
-[ext_resource type="PackedScene" uid="uid://bahnkrklwf445" path="res://objs/experiment/plant/overlay.tscn" id="5_n2aqr"]
 [ext_resource type="PackedScene" uid="uid://b603832vfsa4b" path="res://objs/notes.tscn" id="6_f8ooo"]
+[ext_resource type="FontFile" uid="uid://cxnmor6y1or8j" path="res://assets/font/OtomanopeeOne-Regular.ttf" id="8_d78f6"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -22,106 +22,109 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -64.0
-offset_right = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_n2aqr")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 16
+[node name="VBoxContainer" type="Node2D" parent="."]
 
 [node name="Padding" type="FlowContainer" parent="VBoxContainer"]
-layout_mode = 2
+offset_right = 853.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
+offset_left = -2.0
+offset_top = 46.0
+offset_right = 851.0
+offset_bottom = 96.0
 theme = ExtResource("1_naem5")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(0.49019608, 0.21960784, 0.2509804, 1)
+theme_override_font_sizes/font_size = 60
 text = "Menu"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 8
-alignment = 1
+[node name="VBoxContainer" type="Node2D" parent="VBoxContainer"]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 8
-alignment = 1
+[node name="HBoxContainer" type="Node2D" parent="VBoxContainer/VBoxContainer"]
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/h_separation = 8
-theme_override_constants/v_separation = 8
-columns = 2
+[node name="GridContainer" type="Node2D" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
 
 [node name="Experiment" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(128, 64)
-layout_mode = 2
+offset_left = 251.0
+offset_top = 159.0
+offset_right = 406.0
+offset_bottom = 223.0
 theme = ExtResource("1_naem5")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Experiment"
 script = ExtResource("2_sw27b")
 scene = ExtResource("3_22o8r")
-back_button = null
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
 [node name="Notes" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(128, 64)
-layout_mode = 2
+offset_left = 446.0
+offset_top = 158.0
+offset_right = 595.0
+offset_bottom = 222.0
 theme = ExtResource("1_naem5")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Notes"
 script = ExtResource("2_sw27b")
 scene = ExtResource("6_f8ooo")
-back_button = null
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
 [node name="Projects" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(128, 64)
-layout_mode = 2
+offset_left = 249.0
+offset_top = 240.0
+offset_right = 404.0
+offset_bottom = 304.0
 theme = ExtResource("1_naem5")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Projects"
 script = ExtResource("2_sw27b")
-back_button = null
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
 [node name="Options" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(128, 64)
-layout_mode = 2
+offset_left = 446.0
+offset_top = 241.0
+offset_right = 598.0
+offset_bottom = 305.0
 theme = ExtResource("1_naem5")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Options"
 script = ExtResource("2_sw27b")
-back_button = null
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
-layout_mode = 2
-alignment = 1
+[node name="HBoxContainer2" type="Node2D" parent="VBoxContainer/VBoxContainer"]
 
 [node name="Help" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(128, 64)
-layout_mode = 2
+offset_left = 249.0
+offset_top = 322.0
+offset_right = 402.0
+offset_bottom = 386.0
 theme = ExtResource("1_naem5")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Help"
 
-[node name="Overlay" parent="." instance=ExtResource("5_n2aqr")]
-layout_mode = 1
-text = PackedStringArray("Frequently asked questions:\nHow accurate is DigiLab?\n\nDigiLab is highly accurate in explaining the science, but it offers low precision in the measurement and outcome. The goal of this app is merely to show the concept of simple experiments. Since our experiments use common household materials and basic measurements they are not designed to be laboratory-graded.\n\nAre the experiments safe to do in real life?\n\nYes, the experiments are safe when all instructions and warnings are followed. However, safety is a partnership that requires adult supervision.")
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="SceneButton" type="Button" parent="Node2D"]
+offset_left = 448.0
+offset_top = 322.0
+offset_right = 600.0
+offset_bottom = 387.0
+theme = ExtResource("1_naem5")
+theme_override_fonts/font = ExtResource("8_d78f6")
+text = "Back
+"
+script = ExtResource("2_sw27b")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer2/Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="Node2D/SceneButton" to="." method="_on_scene_button_pressed"]

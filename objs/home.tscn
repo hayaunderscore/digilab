@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://dulgtrahtio0c"]
+
+[ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="1_jocxb"]
+[ext_resource type="Texture2D" uid="uid://bigdfcxabhppi" path="res://assets/bg/logaurch-removebg-preview.png" id="2_dc6ch"]
+[ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="3_mqx73"]
+[ext_resource type="FontFile" uid="uid://cxnmor6y1or8j" path="res://assets/font/OtomanopeeOne-Regular.ttf" id="4_sdepk"]
+[ext_resource type="Script" uid="uid://bnojqotid7xi2" path="res://scene_button.gd" id="5_je1oh"]
+
+[node name="Home" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jocxb")
+expand_mode = 1
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(432.00003, 187.00002)
+scale = Vector2(1.2515001, 0.975)
+texture = ExtResource("2_dc6ch")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SceneButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 326.0
+offset_top = 277.0
+offset_right = 480.0
+offset_bottom = 326.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_mqx73")
+theme_override_fonts/font = ExtResource("4_sdepk")
+text = "Start"
+script = ExtResource("5_je1oh")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[connection signal="pressed" from="Control/SceneButton" to="Control/SceneButton" method="_on_pressed"]

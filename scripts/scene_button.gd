@@ -35,4 +35,4 @@ func _on_infooo_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://objs/phy_exp_1.tscn")

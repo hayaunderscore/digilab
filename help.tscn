@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5hng1i56g0pj"]
+
+[ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="1_hy4f4"]
+[ext_resource type="Script" uid="uid://dgmn07am5v3s5" path="res://help.gd" id="1_xckc7"]
+[ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="2_xckc7"]
+[ext_resource type="FontFile" uid="uid://cxnmor6y1or8j" path="res://assets/font/OtomanopeeOne-Regular.ttf" id="3_24vqp"]
+[ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="4_ldbhk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y43ri"]
+bg_color = Color(0.973535, 0.9735351, 0.973535, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Help" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xckc7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hy4f4")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 159.0
+offset_right = 826.0
+offset_bottom = 404.0
+theme = ExtResource("2_xckc7")
+theme_override_colors/font_color = Color(0.026721504, 0.026721502, 0.026721498, 1)
+theme_override_fonts/font = ExtResource("3_24vqp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y43ri")
+text = "1. How accurate is DigiLab? 
+
+DigiLab is highly accurate in explaining the science, but it offers low precision in the 
+measurement and outcome. The goal of this app is merely to show the concept
+of simple experiments. Since our experiments use common household materials and basic
+measurements they are not designed to be laboratory-graded. 
+
+2. Are the experiments safe to do in real life?
+
+Yes, the experiments are safe when all instructions and warnings are followed.
+However, safety is a partnership that requires adult supervision."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FAQ" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.5
+offset_top = 44.0
+offset_right = 58.5
+offset_bottom = 105.0
+grow_horizontal = 2
+theme = ExtResource("2_xckc7")
+theme_override_colors/font_color = Color(0.49019608, 0.21960784, 0.2509804, 1)
+theme_override_fonts/font = ExtResource("3_24vqp")
+theme_override_font_sizes/font_size = 60
+text = "FAQ"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 746.0
+offset_top = 16.0
+offset_right = 837.0
+offset_bottom = 65.0
+theme = ExtResource("2_xckc7")
+theme_override_fonts/font = ExtResource("3_24vqp")
+text = "Back"
+script = ExtResource("4_ldbhk")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

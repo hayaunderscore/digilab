@@ -11,5 +11,16 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_scene_button_3_pressed() -> void:
+func _on_exp_1_pressed() -> void:
+	get_tree().change_scene_to_file("res://objs/phy_exp_1.tscn")
+
+
+
+func _on_exp_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://objs/phy_exp_2.tscn")
+	
+	
+
+
+func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://objs/experiment.tscn")

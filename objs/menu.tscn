@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bhdintyvyjufh"]
 
+[ext_resource type="Script" uid="uid://dpmsl1u1783p4" path="res://objs/menu.gd" id="1_f8ooo"]
 [ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="1_naem5"]
-[ext_resource type="Script" uid="uid://dehdmqv60pksn" path="res://scripts/menu.gd" id="1_sw8bf"]
 [ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="2_n2aqr"]
 [ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="2_sw27b"]
 [ext_resource type="PackedScene" uid="uid://b6ofc6xp5hn57" path="res://objs/experiment.tscn" id="3_22o8r"]
@@ -15,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_sw8bf")
+script = ExtResource("1_f8ooo")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -52,10 +52,17 @@ horizontal_alignment = 1
 
 [node name="Experiment" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(128, 64)
-offset_left = 251.0
-offset_top = 159.0
-offset_right = 406.0
-offset_bottom = 223.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 330.0
+offset_top = 153.0
+offset_right = 538.0
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_naem5")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Experiment"
@@ -65,10 +72,10 @@ metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
 [node name="Notes" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(128, 64)
-offset_left = 446.0
-offset_top = 158.0
-offset_right = 595.0
-offset_bottom = 222.0
+offset_left = 327.0
+offset_top = 225.0
+offset_right = 537.0
+offset_bottom = 289.0
 theme = ExtResource("1_naem5")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Notes"
@@ -76,38 +83,14 @@ script = ExtResource("2_sw27b")
 scene = ExtResource("6_f8ooo")
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
-[node name="Projects" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(128, 64)
-offset_left = 249.0
-offset_top = 240.0
-offset_right = 404.0
-offset_bottom = 304.0
-theme = ExtResource("1_naem5")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Projects"
-script = ExtResource("2_sw27b")
-metadata/_custom_type_script = "uid://dkk6iu66ynto0"
-
-[node name="Options" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(128, 64)
-offset_left = 446.0
-offset_top = 241.0
-offset_right = 598.0
-offset_bottom = 305.0
-theme = ExtResource("1_naem5")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Options"
-script = ExtResource("2_sw27b")
-metadata/_custom_type_script = "uid://dkk6iu66ynto0"
-
 [node name="HBoxContainer2" type="Node2D" parent="VBoxContainer/VBoxContainer"]
 
 [node name="Help" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(128, 64)
-offset_left = 249.0
-offset_top = 322.0
-offset_right = 402.0
-offset_bottom = 386.0
+offset_left = 328.0
+offset_top = 300.0
+offset_right = 537.0
+offset_bottom = 364.0
 theme = ExtResource("1_naem5")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Help"
@@ -115,10 +98,10 @@ text = "Help"
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="SceneButton" type="Button" parent="Node2D"]
-offset_left = 448.0
-offset_top = 322.0
-offset_right = 600.0
-offset_bottom = 387.0
+offset_left = 329.0
+offset_top = 371.0
+offset_right = 538.0
+offset_bottom = 436.0
 theme = ExtResource("1_naem5")
 theme_override_fonts/font = ExtResource("8_d78f6")
 text = "Back

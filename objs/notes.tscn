@@ -82,6 +82,7 @@ size_flags_horizontal = 3
 
 [node name="ItemList" type="ItemList" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_xggly")
 select_mode = 2
 auto_height = true
 item_count = 2
@@ -98,6 +99,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_xggly")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.34781754, 0.3478167, 0.34781688, 0.6)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_sa1nr")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nsn71")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_flqah")

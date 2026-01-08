@@ -48,7 +48,11 @@ horizontal_alignment = 1
 
 [node name="HBoxContainer" type="Node2D" parent="VBoxContainer/VBoxContainer"]
 
-[node name="GridContainer" type="Node2D" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 8
 
 [node name="A" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(160, 32)
@@ -80,8 +84,6 @@ text = "Experiment B
 "
 script = ExtResource("2_t116v")
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
-
-[node name="HBoxContainer2" type="Node2D" parent="VBoxContainer/VBoxContainer"]
 
 [node name="Button" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(192, 32)

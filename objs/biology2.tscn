@@ -1,0 +1,130 @@
+[gd_scene load_steps=15 format=3 uid="uid://qxasowt6cca4"]
+
+[ext_resource type="Script" uid="uid://c41k5rxwd2we5" path="res://objs/biology_2.gd" id="1_a4igw"]
+[ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="1_y0ysw"]
+[ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="2_myu2d"]
+[ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="3_168ei"]
+[ext_resource type="Texture2D" uid="uid://bwojjjaxat1jp" path="res://assets/experiments/pechay-no-bg/no_color-removebg.png" id="4_168ei"]
+[ext_resource type="Texture2D" uid="uid://beih1g6inhmdb" path="res://assets/experiments/pechay-no-bg/blue-removebg-2.png" id="6_vsw2h"]
+[ext_resource type="Texture2D" uid="uid://cbhybrypt4p0g" path="res://assets/experiments/pechay-no-bg/blue-removebg-1.png" id="6_yduxg"]
+[ext_resource type="Texture2D" uid="uid://ctufuqn7ttbwh" path="res://assets/experiments/pechay-no-bg/red-removebg-1.png" id="7_a4igw"]
+[ext_resource type="Texture2D" uid="uid://duyyw18n0h66u" path="res://assets/experiments/pechay-no-bg/blue-removebg-3.png" id="7_ayqil"]
+[ext_resource type="Texture2D" uid="uid://oiheidv52ohh" path="res://assets/experiments/pechay-no-bg/orange-removebg-1.png" id="7_qx6pg"]
+[ext_resource type="Texture2D" uid="uid://dqqhx0vopmrna" path="res://assets/experiments/pechay-no-bg/red-removebg-2.png" id="9_g5ks7"]
+[ext_resource type="Texture2D" uid="uid://bbndeydyfuo3r" path="res://assets/experiments/pechay-no-bg/red-removebg-3.png" id="10_n8sr8"]
+[ext_resource type="Texture2D" uid="uid://h7hhhpdl8jle" path="res://assets/experiments/pechay-no-bg/orange-removebg-2.png" id="12_ftf15"]
+[ext_resource type="Texture2D" uid="uid://bixn2l2mmgb3m" path="res://assets/experiments/pechay-no-bg/orange-removebg-3.png" id="13_grbsr"]
+
+[node name="Biology2" type="Node2D"]
+script = ExtResource("1_a4igw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_top = 2.0
+offset_right = 854.0
+offset_bottom = 483.0
+texture = ExtResource("1_y0ysw")
+expand_mode = 1
+
+[node name="SceneButton" type="Button" parent="."]
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 87.0
+offset_bottom = 54.0
+theme = ExtResource("2_myu2d")
+text = "Back"
+script = ExtResource("3_168ei")
+back_button = true
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="Start" type="Button" parent="."]
+offset_left = 89.0
+offset_top = 5.0
+offset_right = 177.0
+offset_bottom = 54.0
+theme = ExtResource("2_myu2d")
+text = "Start"
+
+[node name="Restart" type="Button" parent="."]
+offset_left = 183.0
+offset_top = 5.0
+offset_right = 271.0
+offset_bottom = 54.0
+theme = ExtResource("2_myu2d")
+text = "Restart"
+
+[node name="CycleTimer" type="Timer" parent="."]
+
+[node name="button1" type="Button" parent="."]
+offset_left = 7.0
+offset_top = 58.0
+offset_right = 95.0
+offset_bottom = 107.0
+theme = ExtResource("2_myu2d")
+text = "Plain"
+
+[node name="button2" type="Button" parent="."]
+offset_left = 7.0
+offset_top = 110.0
+offset_right = 95.0
+offset_bottom = 159.0
+theme = ExtResource("2_myu2d")
+text = "Red"
+
+[node name="button3" type="Button" parent="."]
+offset_left = 8.0
+offset_top = 164.0
+offset_right = 96.0
+offset_bottom = 213.0
+theme = ExtResource("2_myu2d")
+text = "Blue"
+
+[node name="button4" type="Button" parent="."]
+offset_left = 6.0
+offset_top = 219.0
+offset_right = 100.0
+offset_bottom = 268.0
+theme = ExtResource("2_myu2d")
+text = "Orange
+"
+
+[node name="Blue1" type="Sprite2D" parent="."]
+position = Vector2(433, 320)
+texture = ExtResource("6_yduxg")
+
+[node name="Blue2" type="Sprite2D" parent="."]
+position = Vector2(433, 320)
+texture = ExtResource("6_vsw2h")
+
+[node name="Blue3" type="Sprite2D" parent="."]
+position = Vector2(433, 320)
+texture = ExtResource("7_ayqil")
+
+[node name="Red1" type="Sprite2D" parent="."]
+position = Vector2(433, 321)
+texture = ExtResource("7_a4igw")
+
+[node name="Red2" type="Sprite2D" parent="."]
+position = Vector2(433, 321)
+texture = ExtResource("9_g5ks7")
+
+[node name="Red3" type="Sprite2D" parent="."]
+position = Vector2(433, 321)
+texture = ExtResource("10_n8sr8")
+
+[node name="Orange1" type="Sprite2D" parent="."]
+position = Vector2(431, 320)
+texture = ExtResource("7_qx6pg")
+
+[node name="Orange2" type="Sprite2D" parent="."]
+position = Vector2(431, 320)
+texture = ExtResource("12_ftf15")
+
+[node name="Orange3" type="Sprite2D" parent="."]
+position = Vector2(430.25, 319.75)
+scale = Vector2(1.0031446, 0.983871)
+texture = ExtResource("13_grbsr")
+
+[node name="NoColor" type="Sprite2D" parent="."]
+position = Vector2(432, 324)
+scale = Vector2(1.1079193, 1.0339863)
+texture = ExtResource("4_168ei")

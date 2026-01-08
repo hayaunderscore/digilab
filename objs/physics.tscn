@@ -95,6 +95,7 @@ script = ExtResource("4_vjvg7")
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
 [connection signal="pressed" from="button/exp1" to="." method="_on_exp_1_pressed"]
+[connection signal="pressed" from="button/exp2" to="." method="_on_exp_2_pressed"]
 [connection signal="pressed" from="button/back" to="." method="_on_scene_button_3_pressed"]
 [connection signal="pressed" from="button/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="button/back" to="button/exp1" method="_on_back_pressed"]

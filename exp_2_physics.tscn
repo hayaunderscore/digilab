@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://pq5i1mdouhct"]
+
+[ext_resource type="Script" uid="uid://byeounb15qxr3" path="res://exp_2_physics.gd" id="1_vvafj"]
+[ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="2_03doj"]
+[ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="3_ggv57"]
+[ext_resource type="FontFile" uid="uid://cxnmor6y1or8j" path="res://assets/font/OtomanopeeOne-Regular.ttf" id="4_qo534"]
+[ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="5_fq7mu"]
+
+[node name="exp_2_physics" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vvafj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_03doj")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 241.0
+offset_top = 39.0
+offset_right = 663.0
+offset_bottom = 100.0
+theme = ExtResource("3_ggv57")
+theme_override_colors/font_color = Color(0.49019608, 0.21960784, 0.2509804, 1)
+theme_override_fonts/font = ExtResource("4_qo534")
+theme_override_font_sizes/font_size = 60
+text = "Experiment II"
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 11.0
+offset_right = 127.0
+offset_bottom = 60.0
+theme = ExtResource("3_ggv57")
+theme_override_fonts/font = ExtResource("4_qo534")
+text = "Start"
+script = ExtResource("5_fq7mu")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 737.0
+offset_top = 13.0
+offset_right = 843.0
+offset_bottom = 62.0
+theme = ExtResource("3_ggv57")
+theme_override_fonts/font = ExtResource("4_qo534")
+text = "Back"
+script = ExtResource("5_fq7mu")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

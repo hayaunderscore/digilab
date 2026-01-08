@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bhdintyvyjufh"]
 
+[ext_resource type="Script" uid="uid://dpmsl1u1783p4" path="res://objs/menu.gd" id="1_f8ooo"]
 [ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="1_naem5"]
-[ext_resource type="Script" uid="uid://dehdmqv60pksn" path="res://scripts/menu.gd" id="1_sw8bf"]
 [ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="2_n2aqr"]
 [ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="2_sw27b"]
 [ext_resource type="PackedScene" uid="uid://b6ofc6xp5hn57" path="res://objs/experiment.tscn" id="3_22o8r"]
@@ -15,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_sw8bf")
+script = ExtResource("1_f8ooo")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

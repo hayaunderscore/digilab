@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://b33tda4gaoadg"]
+
+[ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="1_agxhv"]
+[ext_resource type="Script" uid="uid://benouvicjpft5" path="res://physics.gd" id="1_prsrd"]
+[ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="2_hk0ex"]
+[ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="2_htxsa"]
+[ext_resource type="FontFile" uid="uid://cxnmor6y1or8j" path="res://assets/font/OtomanopeeOne-Regular.ttf" id="3_prsrd"]
+
+[node name="Physics" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_prsrd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_agxhv")
+expand_mode = 1
+
+[node name="exp1" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 170.0
+offset_right = 529.0
+offset_bottom = 231.0
+theme = ExtResource("2_htxsa")
+theme_override_fonts/font = ExtResource("3_prsrd")
+text = "Experiment I"
+script = ExtResource("2_hk0ex")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="exp2" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 244.0
+offset_right = 531.0
+offset_bottom = 307.0
+theme = ExtResource("2_htxsa")
+theme_override_fonts/font = ExtResource("3_prsrd")
+text = "Experiment II"
+script = ExtResource("2_hk0ex")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="back" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 327.0
+offset_right = 533.0
+offset_bottom = 383.0
+theme = ExtResource("2_htxsa")
+theme_override_fonts/font = ExtResource("3_prsrd")
+text = "Back
+"
+script = ExtResource("2_hk0ex")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[node name="Experiment I" type="Label" parent="."]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 38.0
+offset_right = 564.0
+offset_bottom = 99.0
+theme = ExtResource("2_htxsa")
+theme_override_colors/font_color = Color(0.49019608, 0.21960784, 0.2509804, 1)
+theme_override_fonts/font = ExtResource("3_prsrd")
+theme_override_font_sizes/font_size = 60
+text = "Physics"
+
+[connection signal="pressed" from="TextureRect/exp1" to="." method="_on_exp_1_pressed"]
+[connection signal="pressed" from="TextureRect/exp2" to="." method="_on_exp_2_pressed"]
+[connection signal="pressed" from="TextureRect/back" to="." method="_on_back_pressed"]

@@ -2,7 +2,7 @@ extends Control
 class_name Overlay
 
 @export_multiline var text: PackedStringArray
-var current_index = 0
+var current_index = 1
 
 func _ready() -> void:
 	visible = false

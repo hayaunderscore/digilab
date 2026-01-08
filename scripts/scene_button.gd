@@ -22,10 +22,6 @@ func _pressed() -> void:
 		MenuHelper.back_scenes.pop_back()
 		MenuHelper.current_scene_nest -= 1
 		changed_scene.emit()
-	# Wtf! Not set? Explode!
-	if scene == null and not back_button:
-		SoundManager.play_sfx("res://assets/snd/snd_badexplosion.wav")
-		modulate.a = 0
 	clicked = true
 
 
@@ -36,3 +32,5 @@ func _on_infooo_pressed() -> void:
 
 func _on_back_pressed() -> void:
 	pass # Replace with function body.
+	
+	

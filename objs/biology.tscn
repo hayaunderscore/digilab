@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cq7m3kxne3bb1"]
+[gd_scene load_steps=6 format=3 uid="uid://cq7m3kxne3bb1"]
 
 [ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="1_jamiu"]
 [ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="1_lcw8s"]
 [ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="2_t116v"]
 [ext_resource type="PackedScene" uid="uid://dqk78uqojko7p" path="res://objs/experiment/plant/experiment_1.tscn" id="3_t116v"]
+[ext_resource type="PackedScene" uid="uid://qxasowt6cca4" path="res://objs/biology2.tscn" id="5_hj61v"]
 
 [node name="ExperimentMenu" type="Control"]
 layout_mode = 3
@@ -73,6 +74,7 @@ theme = ExtResource("1_lcw8s")
 text = "Experiment B
 "
 script = ExtResource("2_t116v")
+scene = ExtResource("5_hj61v")
 metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 
 [node name="VBoxContainer_VBoxContainer_HBoxContainer2#Button" type="Button" parent="."]

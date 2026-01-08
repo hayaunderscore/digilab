@@ -115,6 +115,11 @@ text = "Info
 "
 
 [node name="Overlay" parent="HUD" instance=ExtResource("4_7ju1j")]
+visible = false
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 2.0
+offset_bottom = 1.0
 text = PackedStringArray("In this experiment, the user can \"plant\" a digital seed. The user can modify the amount of sunlight and water to experiment how each variable affect the plant growth.  The experiment will be saved in the “Projects”. “ Over a few animated \"days,\" the seed sprouts, a stem emerges, and leaves grow.  The user can check the project time to time. \nNote your observations. ")
 
 [node name="Environment" type="Node2D" parent="."]

@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://cbvprfl4xt51o"]
+
+[ext_resource type="Script" uid="uid://d3vejf6rkeb06" path="res://exp_2_chem.gd" id="1_f2jdc"]
+[ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="1_isx1k"]
+[ext_resource type="Texture2D" uid="uid://dlo1anoxyniph" path="res://bolkana/609236979_1596602118458333_233611417470145046_n.png" id="2_f2jdc"]
+[ext_resource type="Texture2D" uid="uid://cyhv4s41opxfa" path="res://bolkana/609430418_1256932109823980_1834023489624929809_n.png" id="3_ytxre"]
+[ext_resource type="Texture2D" uid="uid://bohg07rrsrgqj" path="res://bolkana/609211424_1362295525081483_4987721846839766021_n.png" id="4_fgnmr"]
+[ext_resource type="Texture2D" uid="uid://bu21ux862aow1" path="res://bolkana/609077236_1557753322097727_8824758244751074819_n.png" id="5_k2nr6"]
+[ext_resource type="Texture2D" uid="uid://cglbidorpesyd" path="res://bolkana/608812945_1541652127040284_2362971822497900656_n.png" id="6_5q8sh"]
+[ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="7_xkpye"]
+[ext_resource type="FontFile" uid="uid://cxnmor6y1or8j" path="res://assets/font/OtomanopeeOne-Regular.ttf" id="8_0mmgf"]
+[ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="9_s3e0t"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f2jdc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_isx1k")
+expand_mode = 1
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(423.80048, 402.50003)
+scale = Vector2(0.41718706, 0.21156374)
+texture = ExtResource("2_f2jdc")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(701.00006, 340)
+scale = Vector2(0.31148624, 0.24198294)
+texture = ExtResource("3_ytxre")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(541, 288)
+scale = Vector2(0.4068323, 0.4212828)
+texture = ExtResource("4_fgnmr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(310, 270)
+scale = Vector2(0.4068323, 0.4212828)
+texture = ExtResource("5_k2nr6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(128.99998, 321)
+scale = Vector2(0.4068323, 0.4212828)
+texture = ExtResource("6_5q8sh")
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 11.0
+offset_right = 844.0
+offset_bottom = 60.0
+theme = ExtResource("7_xkpye")
+theme_override_fonts/font = ExtResource("8_0mmgf")
+text = "Back"
+script = ExtResource("9_s3e0t")
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

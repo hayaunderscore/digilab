@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvy8auna0vme3"]
+
+[ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="1_00dvc"]
+[ext_resource type="Script" uid="uid://ckplwx6sg3b07" path="res://bulkan.gd" id="1_8pfa5"]
+[ext_resource type="Texture2D" uid="uid://dlo1anoxyniph" path="res://bolkana/609236979_1596602118458333_233611417470145046_n.png" id="3_my4k5"]
+[ext_resource type="Texture2D" uid="uid://cglbidorpesyd" path="res://bolkana/608812945_1541652127040284_2362971822497900656_n.png" id="4_7tfnr"]
+[ext_resource type="Texture2D" uid="uid://bohg07rrsrgqj" path="res://bolkana/609211424_1362295525081483_4987721846839766021_n.png" id="5_4nffi"]
+[ext_resource type="Texture2D" uid="uid://bu21ux862aow1" path="res://bolkana/609077236_1557753322097727_8824758244751074819_n.png" id="6_i3g7n"]
+[ext_resource type="Theme" uid="uid://cf5g8h6mhp6iu" path="res://assets/font/font.tres" id="7_absme"]
+[ext_resource type="Texture2D" uid="uid://cyhv4s41opxfa" path="res://bolkana/609430418_1256932109823980_1834023489624929809_n.png" id="7_t27ym"]
+[ext_resource type="Script" uid="uid://dkk6iu66ynto0" path="res://scripts/scene_button.gd" id="8_ps4pg"]
+
+[node name="Chemchem" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8pfa5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 7.0
+offset_right = 852.0
+offset_bottom = 456.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_00dvc")
+expand_mode = 1
+
+[node name="4" type="Sprite2D" parent="TextureRect"]
+position = Vector2(422.06677, 352)
+scale = Vector2(0.41204417, 0.28352627)
+texture = ExtResource("3_my4k5")
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureRect"]
+position = Vector2(135.00003, 299.00003)
+scale = Vector2(0.48833376, 0.30554858)
+texture = ExtResource("4_7tfnr")
+
+[node name="2" type="Sprite2D" parent="TextureRect"]
+position = Vector2(244, 256)
+scale = Vector2(0.21660255, 0.28261784)
+texture = ExtResource("5_4nffi")
+
+[node name="3" type="Sprite2D" parent="TextureRect"]
+position = Vector2(471.09567, 223)
+scale = Vector2(0.42623678, 0.41235396)
+texture = ExtResource("6_i3g7n")
+
+[node name="5" type="Sprite2D" parent="TextureRect"]
+position = Vector2(734.5249, 273.60107)
+scale = Vector2(0.23884515, 0.30168703)
+texture = ExtResource("7_t27ym")
+
+[node name="CanvasLayer" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartButton" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 23.0
+offset_right = 163.0
+offset_bottom = 74.0
+theme = ExtResource("7_absme")
+text = "Start"
+
+[node name="SceneButton" type="Button" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_left = 701.0
+offset_top = 21.0
+offset_right = 836.0
+offset_bottom = 74.0
+theme = ExtResource("7_absme")
+text = "Back"
+script = ExtResource("8_ps4pg")
+back_button = true
+metadata/_custom_type_script = "uid://dkk6iu66ynto0"
+
+[connection signal="pressed" from="CanvasLayer/Control/SceneButton" to="." method="_on_scene_button_pressed"]

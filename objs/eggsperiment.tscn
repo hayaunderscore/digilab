@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dyjo66d6866si"]
+[gd_scene load_steps=19 format=3 uid="uid://dyjo66d6866si"]
 
 [ext_resource type="Script" uid="uid://ofe00ec1lv65" path="res://scripts/eggsperiment.gd" id="1_6ouqo"]
 [ext_resource type="Texture2D" uid="uid://ddinrkbpewf21" path="res://assets/bg/default.jpg" id="2_keqlt"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://cdsdmxuftvq4n" path="res://scripts/salt.gd" id="12_r87he"]
 [ext_resource type="Script" uid="uid://btyooyxf5menk" path="res://scripts/egg_1.gd" id="15_f1ayg"]
 [ext_resource type="Script" uid="uid://yic2cyml6k6s" path="res://scripts/egg_2.gd" id="16_7q1of"]
+[ext_resource type="Texture2D" uid="uid://irgnmhkg2rc" path="res://eggspe/spoonsalt.png" id="18_f1ayg"]
 
 [node name="eggsperiment" type="Control"]
 layout_mode = 3
@@ -62,21 +63,21 @@ metadata/_custom_type_script = "uid://dkk6iu66ynto0"
 [node name="Node2D" type="Control" parent="."]
 anchors_preset = 0
 
-[node name="WaterBottle" type="TextureRect" parent="Node2D"]
+[node name="WaterBottle" type="TextureRect" parent="Node2D" node_paths=PackedStringArray("glass_plain", "glass_salt")]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -23.0
-offset_top = 151.00002
-offset_right = 218.92609
-offset_bottom = 526.0
-grow_horizontal = 2
+offset_left = 45.0
+offset_top = 149.0
+offset_right = 250.35587
+offset_bottom = 524.0
 scale = Vector2(0.710961, 0.84933335)
+mouse_filter = 0
 texture = ExtResource("7_f3cqk")
 expand_mode = 1
 stretch_mode = 3
+flip_h = true
 script = ExtResource("8_0kl8x")
+glass_plain = NodePath("../GlassPlain")
+glass_salt = NodePath("../GlassSalt")
 
 [node name="SaltSpoon" type="TextureRect" parent="Node2D"]
 layout_mode = 0
@@ -90,47 +91,33 @@ expand_mode = 1
 stretch_mode = 3
 script = ExtResource("10_yv6co")
 
-[node name="salt" type="TextureRect" parent="Node2D"]
+[node name="saltspoon" type="Sprite2D" parent="Node2D"]
+visible = false
+position = Vector2(246, 298)
+scale = Vector2(0.7477478, 0.84)
+texture = ExtResource("18_f1ayg")
+
+[node name="salt" type="TextureRect" parent="Node2D" node_paths=PackedStringArray("shortcut_context")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 84.99995
-offset_top = 124.999985
-offset_right = 236.99994
-offset_bottom = 568.51166
+offset_left = -68.00005
+offset_top = 92.99999
+offset_right = 597.99994
+offset_bottom = 536.51166
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.50000006, 0.40600002)
 pivot_offset = Vector2(970.0001, 220.42807)
+mouse_filter = 0
+shortcut_context = NodePath("../saltspoon")
 texture = ExtResource("9_8ol6s")
-expand_mode = 1
 stretch_mode = 3
+flip_h = true
 script = ExtResource("12_r87he")
-
-[node name="Glass" type="TextureRect" parent="Node2D"]
-layout_mode = 0
-offset_left = 313.0
-offset_top = 177.00002
-offset_right = 589.9664
-offset_bottom = 665.73627
-scale = Vector2(0.6246246, 0.6066667)
-texture = ExtResource("10_o426n")
-expand_mode = 1
-stretch_mode = 3
-
-[node name="Glass2" type="TextureRect" parent="Node2D"]
-layout_mode = 0
-offset_left = 447.0
-offset_top = 98.00001
-offset_right = 631.1106
-offset_bottom = 850.47253
-scale = Vector2(0.6246246, 0.6066667)
-texture = ExtResource("10_o426n")
-expand_mode = 1
-stretch_mode = 3
 
 [node name="egg1" type="TextureRect" parent="Node2D"]
 layout_mode = 0
@@ -156,14 +143,24 @@ expand_mode = 1
 stretch_mode = 3
 script = ExtResource("16_7q1of")
 
-[node name="waterfilled" type="Sprite2D" parent="Node2D"]
+[node name="GlassSalt" type="Sprite2D" parent="Node2D"]
+position = Vector2(471.99997, 312)
+scale = Vector2(0.44408372, 0.51526225)
+texture = ExtResource("10_o426n")
+
+[node name="GlassPlain" type="Sprite2D" parent="Node2D"]
+position = Vector2(375, 312)
+scale = Vector2(0.44408372, 0.51526225)
+texture = ExtResource("10_o426n")
+
+[node name="WaterFillPlain" type="Sprite2D" parent="Node2D"]
 visible = false
 position = Vector2(364, 307.5)
 scale = Vector2(0.7102102, 0.84533334)
 texture = ExtResource("12_keqlt")
 
-[node name="waterwithsalt" type="Sprite2D" parent="Node2D"]
+[node name="WaterFillSalt" type="Sprite2D" parent="Node2D"]
 visible = false
-position = Vector2(487, 304.50003)
+position = Vector2(482.00003, 310.00003)
 scale = Vector2(0.7477478, 0.84)
 texture = ExtResource("12_keqlt")
